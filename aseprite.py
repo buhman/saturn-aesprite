@@ -587,8 +587,6 @@ def pack_pattern_name_table_2x2(filename, cel_chunk):
                             y_flip = (tile_data & cel_chunk.data.bitmask_for_y_flip.value) != 0
 
                             pattern = (int(y_flip) << 31) | (int(x_flip) << 30) | tile_id
-                            if x_flip or y_flip:
-                                print("HERE", x_flip, y_flip, hex(pattern))
 
                             f.write(pack_index(pattern))
 
